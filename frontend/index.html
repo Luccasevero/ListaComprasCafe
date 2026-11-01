@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista Café</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Lista de Reposição</h1>
+    </header>
+    <section>
+        <div id="addProdutos">
+            <input type="text" name="nomeProduto" id="nomeProduto" placeholder="Nome">
+            <input type="number" name="quantidade" id="quantidade" placeholder="Quantidade">
+            <input type="text" name="observacao" id="observacao" placeholder="Observação">
+            <div id="botoesFormulario">
+                <input id="botaoEnviar" type="button" value="WhatsApp">
+                <input id="botaoCancelar" type="button" value="Cancelar">
+                <input id="botao" type="button" value="Adicionar">
+            </div>
+        </div>
+
+        <div id="produtos">
+            <ul id="lista"></ul>
+        </div>
+    </section>
+    <footer></footer>
+    <script src="app.js"></script>
+</body>
+</html>

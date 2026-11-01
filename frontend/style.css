@@ -1,0 +1,185 @@
+/* fonte de letra manuscrita (opcional, se não carregar usa a de reserva) */
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    padding-bottom: 40px;
+    font-family: 'Patrick Hand', 'Comic Sans MS', cursive;
+    color: #1b2a55;
+    background-color: #1f3a93;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+    background-size: 28px 28px;
+}
+
+/* título em forma de adesivo */
+header {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px 10px;
+}
+
+header h1 {
+    background-color: #fff;
+    color: #1f3a93;
+    font-size: 1.6rem;
+    padding: 8px 22px;
+    border: 3px solid #1f3a93;
+    border-radius: 12px;
+    box-shadow: 4px 4px 0 #f5b700;
+    transform: rotate(-2deg);
+}
+
+/* a folha de caderno */
+section {
+    position: relative;
+    width: min(520px, calc(100% - 24px));
+    margin: 30px auto;
+    padding: 46px 30px 30px;
+    background-color: #fff;
+    border-radius: 6px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+}
+
+/* furinhos do topo */
+section::before {
+    content: "";
+    position: absolute;
+    top: 12px;
+    left: 20px;
+    right: 20px;
+    height: 14px;
+    background-image: radial-gradient(circle, #1f3a93 5px, transparent 6px);
+    background-size: 26px 14px;
+    background-repeat: repeat-x;
+}
+
+/* formulário */
+div#addProdutos {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 2px dashed #9aa5c4;
+}
+
+input,
+button {
+    font-family: inherit;
+}
+
+section #botaoCancelar {
+    display: none;
+}
+
+section #botaoCancelar.visivel {
+    display: block;
+}
+
+section input[type="text"],
+section input[type="number"] {
+    width: 100%;
+    padding: 8px 4px;
+    font-size: 1.1rem;
+    color: #1b2a55;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #2b3a67;
+}
+
+section input[type="text"]:focus,
+section input[type="number"]:focus {
+    outline: none;
+    box-shadow: 0 1px 0 #1aa38f;
+}
+
+section input::placeholder {
+    color: #8a93b0;
+}
+
+section input[type="button"] {
+    padding: 8px 24px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #1aa38f;
+    border: 2px solid #0f6f61;
+    border-radius: 999px;
+    cursor: pointer;
+}
+
+#botoesFormulario {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+section input[type="button"]:hover {
+    background-color: #148a79;
+}
+
+/* lista */
+#produtos {
+    display: none;
+}
+
+#produtos.visivel {
+    display: block;
+}
+
+#lista {
+    list-style: none;
+}
+
+#lista li {
+    display: flex;
+    align-items: center;
+    min-height: 46px;
+    padding: 6px 4px;
+    font-size: 1.2rem;
+    border-bottom: 1px solid #2b3a67;
+}
+
+#lista li:hover {
+    background-color: rgba(26, 163, 143, 0.07);
+}
+
+/* bolinha do checklist */
+#lista li::before {
+    content: "";
+    flex: none;
+    width: 18px;
+    height: 18px;
+    margin-right: 12px;
+    border: 2px solid #1f3a93;
+    border-radius: 50%;
+}
+
+#lista li button {
+    flex: none;
+    margin-left: auto;
+    padding: 2px 10px;
+    font-size: 0.95rem;
+    color: #c0392b;
+    background-color: white;
+    border: 1px solid #c0392b;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#lista li button:hover {
+    color: #fff;
+    background-color: #c0392b;
+}
+
+#lista li button + button { 
+    margin-left: 8px; 
+}
