@@ -178,7 +178,7 @@ async function salvarEdicao(id, dados) {
     }
 }
 
-botaoAdicionarProduto.addEventListener('click', async (e) => {
+botaoAdicionarProduto.addEventListener('mousedown', async (e) => {
     e.preventDefault()
 
     document.getElementById('nomeProduto').focus()
