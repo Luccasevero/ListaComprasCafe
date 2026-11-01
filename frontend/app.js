@@ -249,7 +249,7 @@ async function montarLinkWhatsApp() {
     let mensagem = 'Lista\n'
 
     produtos.forEach((p) => {
-        mensagem += `${p.nome}\n`
+        mensagem += `• ${p.nome}\n`
     })
 
     const mensagemCodificada = encodeURIComponent(mensagem)
