@@ -190,6 +190,7 @@ botaoAdicionarProduto.addEventListener('click', async (e) => {
         adicionarProduto(resultado)
     } else {
         salvarEdicao(produtoIdEdicao, resultado)
+        document.getElementById('nomeProduto').focus()
     }
 })
 
