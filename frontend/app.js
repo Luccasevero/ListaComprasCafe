@@ -180,6 +180,9 @@ async function salvarEdicao(id, dados) {
 
 botaoAdicionarProduto.addEventListener('click', async (e) => {
     e.preventDefault()
+
+    document.getElementById('nomeProduto').focus()
+
     const resultado = validarFormulario()
 
     if (!resultado) {
@@ -190,7 +193,6 @@ botaoAdicionarProduto.addEventListener('click', async (e) => {
         adicionarProduto(resultado)
     } else {
         salvarEdicao(produtoIdEdicao, resultado)
-        document.getElementById('nomeProduto').focus()
     }
 })
 
