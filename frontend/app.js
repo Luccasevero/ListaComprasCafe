@@ -202,7 +202,6 @@ function limparFormulario() {
     document.getElementById('nomeProduto').value = ''
     document.querySelector('#quantidade').value = ''
     document.getElementById('observacao').value = ''
-    document.getElementById('nomeProduto').focus()
 }
 
 function entrarModoEdicao(produto) {

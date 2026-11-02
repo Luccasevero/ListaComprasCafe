@@ -168,8 +168,8 @@ section input[type="button"] {
 #lista li::before {
     content: "";
     flex: none;
-    width: 16px;
-    height: 16px;
+    width: 5px;
+    height: 5px;
     margin-right: 12px;
     border: 2px solid #555;
     border-radius: 50%;
