@@ -180,19 +180,26 @@ async function salvarEdicao(id, dados) {
 
 botaoAdicionarProduto.addEventListener('mousedown', async (e) => {
     e.preventDefault()
+})
 
+botaoAdicionarProduto.addEventListener('click', async () => {
+    botaoAdicionarProduto.disabled = true
     document.getElementById('nomeProduto').focus()
 
     const resultado = validarFormulario()
 
-    if (!resultado) {
-        return
-    }
+    try {
+        if (!resultado) {
+            return
+        }
 
-    if (produtoIdEdicao === null) {
-        adicionarProduto(resultado)
-    } else {
-        salvarEdicao(produtoIdEdicao, resultado)
+        if (produtoIdEdicao === null) {
+            await adicionarProduto(resultado)
+        } else {
+            await salvarEdicao(produtoIdEdicao, resultado)
+        }
+    } finally {
+        botaoAdicionarProduto.disabled = false
     }
 })
 
@@ -210,6 +217,8 @@ function entrarModoEdicao(produto) {
     document.getElementById('nomeProduto').value = produto.nome
     document.getElementById('quantidade').value = produto.quantidade
     document.getElementById('observacao').value = produto.observacao
+
+    document.getElementById('nomeProduto').focus()
 
     botaoCancelarEdicao.classList.add('visivel')
     produtoIdEdicao = produto.id

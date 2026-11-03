@@ -140,6 +140,11 @@ section input[type="button"] {
     cursor: pointer;
 }
 
+section input[type="button"]:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
 /* Lista de Produtos */
 #produtos {
     display: none;
