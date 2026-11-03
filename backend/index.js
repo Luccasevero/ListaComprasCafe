@@ -37,8 +37,17 @@ function avisarTodos() {
 app.get('/produtos', async (req, res) => {
     console.log('Rota /produtos foi chamada')
     try {
+        const limpeza = await pool.query(`
+            DELETE FROM produtos WHERE criado_em < (
+            date_trunc('day', (NOW() AT TIME ZONE 'America/Sao_Paulo') - INTERVAL '4 hours') + INTERVAL '4 hours'
+            ) AT TIME ZONE 'America/Sao_Paulo'  
+            `)
+
+        if (limpeza.rowCount > 0) {
+            avisarTodos()
+        }
+
         const resultado = await pool.query('SELECT * FROM produtos ORDER BY id')
-        console.log('Query terminou, resultado:', resultado.rows)
         res.json(resultado.rows)
     } catch (error) {
         console.log(error)
@@ -99,7 +108,7 @@ app.put('/produtos/:id', async (req, res) => {
         if (!nome) {
             return res.status(400).json({ erro: 'Nome do produto é obrigatório' })
         }
-        
+
         const resultado = await pool.query(
             'UPDATE produtos SET nome = $1, quantidade = $2, observacao = $3 WHERE id = $4 RETURNING *',
             [nome, quantidade, observacao, id]

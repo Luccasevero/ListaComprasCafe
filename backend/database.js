@@ -19,7 +19,8 @@ async function criarTabela() {
                 id SERIAL PRIMARY KEY,
                 nome VARCHAR(255) NOT NULL,
                 quantidade VARCHAR(100), 
-                observacao VARCHAR(100)
+                observacao VARCHAR(100),
+                criado_em TIMESTAMPTZ NOT NULL DEFAULT NOW()
             )
         `)
         console.log('Tabela "produtos" pronta!')
