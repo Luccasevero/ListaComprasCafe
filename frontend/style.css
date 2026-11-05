@@ -7,6 +7,42 @@
     padding: 0;
 }
 
+/* Barra de navegação entre as páginas.
+   As duas páginas usam: se preferir, mova este bloco para o style.css. */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 20px 0;
+}
+
+nav a {
+    padding: 8px 18px;
+    font-family: 'Patrick Hand', 'Comic Sans MS', cursive;
+    font-size: 1.15rem;
+    color: #e0e0e0;
+    text-decoration: none;
+    border: 2px solid rgba(255, 255, 255, 0.35);
+    border-radius: 8px;
+}
+
+nav a:hover {
+    color: #ffffff;
+    border-color: #ffffff;
+}
+
+/* A página atual fica preenchida, como uma aba selecionada */
+nav a[aria-current="page"] {
+    color: #121212;
+    background-color: #f7f5f0;
+    border-color: #f7f5f0;
+}
+
+nav a:focus-visible {
+    outline: 3px solid #ffffff;
+    outline-offset: 2px;
+}
+
 body {
     min-height: 100vh;
     padding-bottom: 40px;

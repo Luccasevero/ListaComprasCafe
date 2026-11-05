@@ -1,0 +1,106 @@
+/* Página de contagem: vai DEPOIS do style.css e só acrescenta o que é dela.
+   Fundo escuro, folha de caderno, margem vermelha e fonte manuscrita vêm do style.css. */
+
+/* Título de cada grupo (Tung, Pão, Outros) */
+.grupo h2 {
+    margin: 26px 0 4px;
+    padding-bottom: 6px;
+    font-family: 'Patrick Hand', 'Comic Sans MS', cursive;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: #2b2b2b;
+    border-bottom: 2px solid #2b2b2b;
+}
+
+.grupo:first-of-type h2 {
+    margin-top: 0;
+}
+
+/* Linhas da contagem: nome do produto à esquerda, campo do número à direita */
+.lista-contagem {
+    list-style: none;
+}
+
+.lista-contagem li {
+    display: flex;
+    align-items: center;
+    min-height: 48px;
+    padding: 4px 6px;
+    font-size: 1.2rem;
+    line-height: 1.2;
+    overflow-wrap: anywhere;
+    color: #2b2b2b;
+    border-bottom: 1px solid #d0ccc0;
+}
+
+.lista-contagem li::before {
+    content: "";
+    flex: none;
+    width: 5px;
+    height: 5px;
+    margin-right: 12px;
+    border: 2px solid #555;
+    border-radius: 50%;
+}
+
+/* Campo do número: o "section" na frente é para ganhar do estilo de input do style.css */
+section .lista-contagem input[type="number"] {
+    flex: none;
+    width: 76px;
+    margin-left: auto;
+    padding: 6px;
+    font-size: 1.25rem;
+    text-align: center;
+    color: #2b2b2b;
+    background-color: rgba(255, 255, 255, 0.6);
+    border: 1px solid #b5b0a1;
+    border-bottom: 1px solid #b5b0a1;
+    border-radius: 6px;
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+/* Tira as setinhas de subir e descer do campo, que ocupam espaço */
+.lista-contagem input[type="number"]::-webkit-outer-spin-button,
+.lista-contagem input[type="number"]::-webkit-inner-spin-button {
+    margin: 0;
+    -webkit-appearance: none;
+}
+
+/* O campo que está sendo digitado fica com marca-texto */
+section .lista-contagem input[type="number"]:focus {
+    outline: none;
+    background-color: #fff3a8;
+    border-color: #000000;
+}
+
+/* Botão de enviar: fica preso na parte de baixo da tela enquanto a lista rola */
+#botaoEnviar {
+    position: sticky;
+    bottom: 14px;
+    display: block;
+    width: 100%;
+    margin-top: 24px;
+    padding: 14px;
+    font-family: inherit;
+    font-size: 1.25rem;
+    color: #ffffff;
+    background-color: #262626;
+    border: 1px solid #111111;
+    border-radius: 8px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+    cursor: pointer;
+}
+
+#botaoEnviar:hover {
+    background-color: #000000;
+}
+
+#botaoEnviar:active {
+    transform: translateY(1px);
+}
+
+#botaoEnviar:focus-visible {
+    outline: 3px solid #fff3a8;
+    outline-offset: 2px;
+}

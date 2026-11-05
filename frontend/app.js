@@ -263,8 +263,7 @@ async function montarLinkWhatsApp() {
         mensagem += `• ${p.nome}\n`
     })
 
-    const mensagemCodificada = encodeURIComponent(mensagem)
-    const url = 'https://wa.me/?text=' + mensagemCodificada
+    const url = 'https://wa.me/?text=' + encodeURIComponent(mensagem)
     //console.log(url)
     return url
 }
