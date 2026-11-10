@@ -18,12 +18,15 @@ function carregarLista(listaItens, ulDoItem) {
         input.dataset.nome = item
         input.inputMode = 'numeric'
         input.type = 'text'
-input.inputMode = 'decimal'
+        input.inputMode = 'decimal'
         input.value = 0
         input.addEventListener('focus', () => input.select())
         li.textContent = item
         li.appendChild(input)
         ulDoItem.appendChild(li)
+
+        const numero = Number(item.value.replace(',', '.')) || 0
+        const quantidade = String(numero).replace('.', ',')
     })
 }
 
