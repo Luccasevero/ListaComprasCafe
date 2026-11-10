@@ -24,9 +24,6 @@ function carregarLista(listaItens, ulDoItem) {
         li.textContent = item
         li.appendChild(input)
         ulDoItem.appendChild(li)
-
-        const numero = Number(item.value.replace(',', '.')) || 0
-        const quantidade = String(numero).replace('.', ',')
     })
 }
 
@@ -45,7 +42,9 @@ function pegarContagem(categoria, ul) {
     let texto = `${categoria}\n`
 
     camposCategoria.forEach((item) => {
-        const quantidade = Number(item.value)
+        const numero = Number(item.value.replace(',', '.')) || 0
+        const quantidade = String(numero).replace('.', ',')
+        
         texto += `${item.dataset.nome}: ${quantidade}\n`
     })
 
