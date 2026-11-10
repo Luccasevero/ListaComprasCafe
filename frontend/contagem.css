@@ -106,3 +106,22 @@ section .lista-contagem input[type="number"]:focus {
     outline: 3px solid #fff3a8;
     outline-offset: 2px;
 }
+
+section .lista-contagem input[data-nome] {
+    flex: none;
+    width: 76px;
+    margin-left: auto;
+    padding: 6px;
+    font-size: 1.25rem;
+    text-align: center;
+    color: #2b2b2b;
+    background-color: rgba(255, 255, 255, 0.6);
+    border: 1px solid #b5b0a1;
+    border-radius: 6px;
+}
+
+section .lista-contagem input[data-nome]:focus {
+    outline: none;
+    background-color: #fff3a8;
+    border-color: #000000;
+}
