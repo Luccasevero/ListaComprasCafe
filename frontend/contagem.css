@@ -12,6 +12,8 @@
     border-bottom: 2px solid #2b2b2b;
 }
 
+section .lista-contagem input[data-nome]
+
 .grupo:first-of-type h2 {
     margin-top: 0;
 }
