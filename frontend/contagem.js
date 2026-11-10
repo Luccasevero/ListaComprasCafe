@@ -18,6 +18,7 @@ function carregarLista(listaItens, ulDoItem) {
         input.dataset.nome = item
         input.min = 0
         input.inputMode = 'numeric'
+        input.step = 'any'
         input.value = 0
         input.addEventListener('focus', () => input.select())
         li.textContent = item
