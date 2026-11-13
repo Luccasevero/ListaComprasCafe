@@ -47,7 +47,7 @@ function pegarContagem(categoria, ul) {
 function montarLinkWhatsApp() {
     let mensagem = ''
 
-    mensagem = pegarContagem('Cafés', ulGraos) + pegarContagem('Amendoccinos', ulAmendoccinos) + pegarContagem('', ulCopos)
+    mensagem = pegarContagem('Cafés', ulGraos) + pegarContagem('Amendoccinos', ulAmendoccinos) + pegarContagem('Copos', ulCopos)
 
     const url = 'https://wa.me/?text=' + encodeURIComponent(mensagem)
     
