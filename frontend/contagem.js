@@ -2,8 +2,6 @@ const tung = ['Banoffe', 'Brownie', 'Cinnamon', 'Bolo de cenoura', 'Cookie bauni
 const pao = ['Croissant', 'Brioche']
 const outros = ['Base baunilha', 'Gás chantilly cx', 'Choco quente', 'Shake cappuccino', 'Frape iogurte', 'Chocolate 30%', 'Polpa abacaxi com 10', 'Morango saco', 'Açaí pote', 'Leite nude', 'Leite zero lactose', 'Leite amêndoa', 'Sorvete creme', 'Água com gás', 'Água sem gás', 'Suco laranja 1,7 litros', 'Chocolate europeu branco', 'Chai latte', 'Matcha', 'Syrup/Xarope', 'Caramelo', 'Maçã verde', 'Macadâmia', 'Morango', 'Vanilla', 'Recheio morango Doremos', 'Recheio chocolate branco', 'Ovomaltine', 'Chantilly Amélia', 'Costela', 'Requeijão', 'Queijo parmesão', 'Bacon', 'Nutella', 'Pistache', 'Doce de leite', 'Manteiga']
 
-const divTung = document.getElementById('Tung')
-const divPao = document.getElementById('Pao')
 const divOutros = document.getElementById('Outros')
 
 const ulTung = document.getElementById('listaTung')
@@ -14,13 +12,14 @@ function carregarLista(listaItens, ulDoItem) {
     listaItens.forEach((item) => {
         const li = document.createElement('li')
         const input = document.createElement('input')
-        input.type = 'number'
-        input.dataset.nome = item
-        input.inputMode = 'numeric'
+        
         input.type = 'text'
         input.inputMode = 'decimal'
+        input.dataset.nome = item
         input.value = 0
+
         input.addEventListener('focus', () => input.select())
+        
         li.textContent = item
         li.appendChild(input)
         ulDoItem.appendChild(li)
