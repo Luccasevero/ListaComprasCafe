@@ -1,10 +1,10 @@
 # Lista Café
 
-> Shared restocking list and product count for a café, built with Node.js, Express, PostgreSQL and vanilla JavaScript.
+> Shared restocking list, product count and inventory for a café, built with Node.js, Express, PostgreSQL and vanilla JavaScript.
 
-Sistema web usado no café onde trabalho para organizar a reposição de produtos e a contagem de estoque. Substitui a lista no papel: a equipe adiciona os produtos que precisam ser comprados e todo mundo vê a mesma lista, atualizada na hora.
+Sistema web usado no café onde trabalho para organizar a reposição de produtos, a contagem de estoque e o inventário da lojinha. Substitui a lista no papel: a equipe adiciona os produtos que precisam ser comprados e todo mundo vê a mesma lista, atualizada na hora.
 
-O projeto tem duas páginas: **Reposição** e **Contagem**.
+O projeto tem três páginas: **Reposição**, **Contagem** e **Inventário**.
 
 ## Funcionalidades
 
@@ -22,6 +22,12 @@ O projeto tem duas páginas: **Reposição** e **Contagem**.
 * Na segunda-feira a contagem é completa; nos outros dias, apenas Tung e Pão
 * Não usa o banco de dados: a mensagem é montada no navegador e enviada direto pelo WhatsApp
 
+### Inventário (`inventario.html`)
+
+* Contagem dos itens da lojinha do café, em três grupos: Grãos, Amendoccinos e Copos
+* Mesmo esquema da contagem (campos que começam em 0 e aceitam vírgula), mas com todos os grupos sempre visíveis, sem regra por dia da semana
+* Também não usa o banco de dados: a mensagem é montada no navegador e enviada direto pelo WhatsApp
+
 ## Tecnologias
 
 * Node.js e Express
@@ -36,10 +42,11 @@ backend/
   index.js       rotas da API, SSE e limpeza diária
   database.js    conexão com o banco e criação da tabela
 frontend/
-  index.html     página de reposição (app.js)
-  contagem.html  página de contagem (contagem.js)
-  style.css      estilo compartilhado
-  contagem.css   estilo da página de contagem
+  index.html       página de reposição (app.js)
+  contagem.html    página de contagem (contagem.js)
+  inventario.html  página de inventário (inventario.js)
+  style.css        estilo compartilhado
+  contagem.css     estilo das páginas de contagem e inventário
 ```
 
 ## Rotas da API
@@ -57,14 +64,14 @@ frontend/
 1. Entre na pasta `backend` e instale as dependências: `npm install`
 2. Crie um arquivo `.env` com a connection string do banco: `DATABASE_URL=...`
 3. Inicie o servidor: `npm start`. A tabela `produtos` é criada automaticamente na primeira execução
-4. Abra `http://localhost:3000` (reposição) ou `http://localhost:3000/contagem.html` (contagem)
+4. Abra `http://localhost:3000` (reposição), `http://localhost:3000/contagem.html` (contagem) ou `http://localhost:3000/inventario.html` (inventário)
 
 Requer Node 20.11 ou mais novo.
 
 ## Limitações conhecidas
 
 * Não há login: quem tiver o link do site consegue editar a lista
-* A contagem não guarda histórico: se a página for recarregada, os números digitados são perdidos
+* A contagem e o inventário não guardam histórico: se a página for recarregada, os números digitados são perdidos
 
 <!--
 Quando tiver as imagens, coloque-as numa pasta "imagens" e apague esta linha e a última para mostrar a seção:
